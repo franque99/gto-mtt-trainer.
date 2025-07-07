@@ -37,3 +37,26 @@
   </footer>
 </body>
 </html>
+<section id="simulador">
+  <h2>🧮 Simulador Push/Fold</h2>
+  <label for="posicao">Posição:</label>
+  <select id="posicao">
+    <option value="SB">SB</option>
+    <option value="BTN">BTN</option>
+    <option value="CO">CO</option>
+    <option value="HJ">HJ</option>
+    <option value="MP">MP</option>
+    <option value="UTG">UTG</option>
+  </select>
+
+  <label for="stack">Stack Efetivo (bb):</label>
+  <select id="stack">
+    <option value="10">10bb</option>
+    <option value="15">15bb</option>
+    <option value="20">20bb</option>
+  </select>
+
+  <button onclick="mostrarRange()">Calcular Range</button>
+
+  <div id="resultado" style="margin-top: 20px;"></div>
+</section>
