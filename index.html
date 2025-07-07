@@ -86,4 +86,27 @@
 </script>
 </body>
 </html>
+.grade {
+  display: grid;
+  grid-template-columns: repeat(13, 30px);
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.grade div {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 13px;
+  border-radius: 4px;
+  background-color: #222;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.grade .ativo {
+  background-color: #00cc66;
+  color: #000;
+}
 
