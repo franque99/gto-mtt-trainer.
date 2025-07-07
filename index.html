@@ -35,6 +35,52 @@
   <footer>
     <p>&copy; 2025 GTO MTT Trainer</p>
   </footer>
+  <section id="simulador">
+  <h2>🧮 Simulador Push/Fold</h2>
+  <label for="posicao">Posição:</label>
+  <select id="posicao">
+    <option value="SB">SB</option>
+    <option value="BTN">BTN</option>
+    <option value="CO">CO</option>
+    <option value="HJ">HJ</option>
+    <option value="MP">MP</option>
+    <option value="UTG">UTG</option>
+  </select>
+
+  <label for="stack">Stack Efetivo (bb):</label>
+  <select id="stack">
+    <option value="10">10bb</option>
+    <option value="15">15bb</option>
+    <option value="20">20bb</option>
+  </select>
+
+  <button onclick="mostrarRange()">Calcular Range</button>
+
+  <div id="resultado" style="margin-top: 20px;"></div>
+</section>
+  <script>
+  function mostrarRange() {
+    const posicao = document.getElementById("posicao").value;
+    const stack = document.getElementById("stack").value;
+    const resultado = document.getElementById("resultado");
+
+    const ranges = {
+      "SB-10": "A2s+, K2s+, Q5s+, 22+, J8s+, T8s+, 98s, A8o+, K9o+",
+      "BTN-10": "A2s+, K5s+, Q8s+, J9s+, T9s, 22+, A9o+, KTo+",
+      "CO-10": "A5s+, K9s+, Q9s+, JTs, 66+, ATo+, KQo",
+      "HJ-10": "A7s+, KTs+, QTs+, JTs, 77+, AJo+",
+      "MP-10": "A8s+, KTs+, QTs+, JTs, 88+, AQo+",
+      "UTG-10": "A9s+, KTs+, QJs, 99+, AQo+",
+      "SB-15": "A2s+, K2s+, Q4s+, J7s+, T8s+, 87s, A9o+, KTo+",
+      "BTN-15": "A2s+, K5s+, Q8s+, J9s+, T9s, 22+, A9o+, KTo+, QJo"
+    };
+
+    const chave = `${posicao}-${stack}`;
+    const range = ranges[chave] || "Sem dados disponíveis para essa combinação.";
+
+    resultado.innerHTML = `<strong>Range GTO estimado:</strong><br>${range}`;
+  }
+</script>
 </body>
 </html>
 <section id="simulador">
